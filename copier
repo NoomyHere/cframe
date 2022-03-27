@@ -4,7 +4,7 @@ if not game:IsLoaded() then
 end
 
     game:service('StarterGui'):SetCore("SendNotification", {
-    Title = "CframeCopy by Ent",
+    Title = "pos/cframe copier by ent",
     Text = "The script is now running",
     Duration = "2",
 })
@@ -24,5 +24,20 @@ if msg[1] == "-cframe" then
     setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame))
     end
 
+if msg[1] == "-position" or msg[1] == "-pos" then
+    game:service('StarterGui'):SetCore("SendNotification", {
+    Title = "Copied!",
+    Text = "Current position was copied to your clipboard.",
+    Duration = "2",
+})
+local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
+local 
+function round(num, numDecimalPlaces)
+        local mult = 10^(numDecimalPlaces or 0)
+        return math.floor(num * mult + 0.5) / mult
+end
+
+setclipboard(tostring(math.floor(hrp.CFrame.x)..", "..round(hrp.CFrame.y, 2)..", "..math.floor(hrp.CFrame.z)))
+end
+
 end)
--- i hate github
