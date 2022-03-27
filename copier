@@ -1,6 +1,18 @@
--- made by ent
-game.Players.LocalPlayer.Chatted:Connect(function(msg)
-msg = string.lower(msg)
+wait(1)
+if not game:IsLoaded() then
+    game.Loaded:Wait() wait(1)
+end
+
+    game:service('StarterGui'):SetCore("SendNotification", {
+    Title = "CframeCopy by Ent",
+    Text = "The script is now running",
+    Duration = "2",
+})
+
+local Player = game.Players.LocalPlayer
+game.Players.LocalPlayer.Chatted:Connect(function(msg) 
+msg = string.split(msg, " ")
+
 
 if msg[1] == "-cframe" then
     game:service('StarterGui'):SetCore("SendNotification", {
