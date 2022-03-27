@@ -1,0 +1,15 @@
+-- made by ent
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+msg = string.lower(msg)
+
+if msg[1] == "-cframe" then
+    game:service('StarterGui'):SetCore("SendNotification", {
+    Title = "Copied!",
+    Text = "Current Cframe was copied to your clipboard.",
+    Duration = "2",
+})
+    
+    setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame))
+    end
+
+end)
